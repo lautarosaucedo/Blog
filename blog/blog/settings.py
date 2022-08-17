@@ -78,13 +78,13 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
