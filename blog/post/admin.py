@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import post , Categoria
+
+class CategoriaList(admin.ModelAdmin):
+	list_display = ['id', 'tipo']
+
+admin.site.register(Categoria, CategoriaList)
+
+class postList(admin.ModelAdmin):
+	list_display = ['id', 'titulo', 'detalles', 'fecha', 'images']
+
+admin.site.register(post, postList)
