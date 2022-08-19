@@ -20,3 +20,6 @@ def login(request):
 
 def noticias(request):
     return render(request, "noticias.html", {})
+    
+def registrar(request):
+    return render(request, "registrar.html", {})    

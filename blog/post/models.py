@@ -22,3 +22,7 @@ class post (models.Model):
     categorias = models.ManyToManyField(Categoria, related_name="categorias")
     idUsuarios = models.ForeignKey(usuarios, on_delete=models.CASCADE)
     
+
+
+
+    
