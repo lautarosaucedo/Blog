@@ -1,4 +1,4 @@
-# Saucedo Lautaro
+# Sitio Blog
 
 ## Mi Primer Sitio desarrollado en el Informatorio 
 
@@ -41,6 +41,8 @@ DATABASES = {
 
 
 ## Autores ✒️
+
+* *Saucedo Lautaro*
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
