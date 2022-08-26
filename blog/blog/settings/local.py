@@ -6,7 +6,7 @@ from .base import *
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog1',
+        'NAME': 'blog2',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
