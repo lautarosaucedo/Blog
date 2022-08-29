@@ -1,12 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView
 from django.urls import reverse
-from django.shortcuts import render
 
-from django.views.generic import CreateView
-
-from .models import usuarios
 from .forms import postearForm
+from .models import usuarios
 
-class postear(CreateView):
+class postearC(CreateView):
 	model = usuarios
 	template_name = "postear/postear.html"
 	form_class = postearForm 

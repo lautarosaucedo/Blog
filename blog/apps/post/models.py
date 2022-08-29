@@ -17,10 +17,10 @@ class post (models.Model):
     
     titulo = models.CharField(max_length = 255)
     detalles = models.CharField(max_length = 255)
-    fecha = models.DateTimeField()
+    fecha = models.DateTimeField(auto_now_add= True , null= True)
     images = models.ImageField(upload_to = "images_post")
     categorias = models.ManyToManyField(Categoria, related_name="categorias")
-    idUsuarios = models.ForeignKey(usuarios, on_delete=models.CASCADE)
+    
     
 
 

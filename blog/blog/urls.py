@@ -18,11 +18,11 @@ urlpatterns = [
     path('iniciar-seccion/', auth_views.LoginView.as_view(template_name="login.html"), name = "login"),
     path('cerrar-seccion/',auth_views.logout_then_login, name="logout"),
    
-    path('noticias/', views.noticias, name = "noticias"),
+    path('noticias/', views.noticias, name="noticias"),
 
     path('registrar/',include('apps.usuarios.urls')),  
     path('comentar/',include('apps.comentarios.urls')),
-    path('postear/',include('apps.post.urls'))
+    path('postear/',include('apps.post.urls')),
 ]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

@@ -6,21 +6,41 @@
 <!DOCTYPE html>
 <html>
     <head>
+      
         <link rel = "stylesheet" href = "{% static 'css/bootstrap.css' %}">
     </head>
-    <body>
-    
+    <body style="background-color: #ECF0F1 ;">
       
       {% for p in post %}
-      <div class="card text-center" style="width: auto; margin: auto auto">
+      <div class="card text" style="max-width:700px; margin-left : 25%;margin-right: 20%; margin-top: 5%;">
         <img src="{{ p.images.url }}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{ p.titulo }}</h5>
-          <p class="card-text">{{ p.detalles }}</p>
-          <a href="{% url 'inicio' %}" class="btn btn-primary stretched-link">Comentar</a>
+        <div class="card-body" style="overflow:auto;">
+          <hr size="8px" color="black" />
+          <h5 class="card-title text-center">{{ p.titulo }}</h5>
+          <hr size="8px" color="black" />
+          <p class="card-text"  style="margin-left : 3%;margin-right: 3%;">{{ p.detalles }}</p>
+          <p class="card-text" style="margin-left : 60%; font-size: small;">Fecha de posteo ({{ p.fecha }})</p>
+          
+          <hr size="8px" color="black" />
+          <h5 class="text-center">Comentarios</h5>
+          <hr size="8px" color="black" />
+          
+          {% for c in comentario %}
+            
+            <p class="card-text" style="margin-left : 5%; font-size: medium;">{{ c.comentario }} </p>
+            <p class="card-text"  style="margin-left : 57%; font-size: small;">Fecha del comentario ({{ c.fecha}})</p>
+            <hr size="8px" color="black" />
+            
+          {% endfor %}
+          
+          
+          
+          <a href="{% url 'comentario:comentar' %}" class="btn btn-primary stretched-link text-center" style="margin-left : 44%;margin-right: 45%; margin-top: 2%;margin-bottom: 2%">Comentar</a>
         </div>
       </div>
-      {% endfor %}    
+      {% endfor %}   
+      <p></p>
+      <a href="{% url 'post:postear' %}" class="btn btn-primary stretched-link " style="margin-left : 46.3%;margin-right: 43%; margin-top: 2%; margin-bottom: 2%">POSTEAR</a> 
 
       <!-- JavaScript Bundle with Popper -->
       <script src="{% static 'js/bootstrap.js' %}" type="text/javascript"></script>

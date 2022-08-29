@@ -3,17 +3,11 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from apps.post.models import post
 from apps.usuarios.models import usuarios
+from apps.comentarios.models import comentarios
 
 def inicio(request):
 
-    posts = post.objects.all()
-
-    ctx={
-        'post' : posts,
-
-    }
-
-    return render(request,"inicio.html",ctx)
+    return render(request,"inicio.html",{})
 
 
 """def login(request):
@@ -25,10 +19,10 @@ def inicio(request):
 def noticias(request):
 
     posts = post.objects.all()
-
+    comentarioss = comentarios.objects.all()
     ctx={
         'post' : posts,
-
+        'comentario':comentarioss,
     }
     return render(request, "noticias.html", ctx)
     
